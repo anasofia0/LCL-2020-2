@@ -1,0 +1,12 @@
+addi R1, R0, R0, 0 # R1 = 0 Resultado
+addi R2, R0, R0, 0 # R2 = X
+addi R3, R0, R0, 0 # R3 = Y
+
+xori R4, R3, R0, -1 # Inverte os bits de R3
+addi R4, R4, R0, 1 # Soma para terminar de negativar
+
+bleu R3, R2, 2 # Pula caso R3 <= R2 (realiza a divisão)
+beq R1, R1, 0 # Mostra o resultado
+addi R2, R2, R4, 0 # Subtrai R3 (negativado em R4) de R2
+addi R1, R1, R0, 1 # Soma 1 no resultado da divisão
+beq R0, R0, -4 # Loop para dividir

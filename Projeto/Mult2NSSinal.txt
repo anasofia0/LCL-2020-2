@@ -1,0 +1,10 @@
+addi R1, R0, R0, 0 # R1 = 0 Resultado
+addi R2, R0, R0, 0 # R2 = X
+addi R3, R0, R0, 0 # R3 = Y
+
+bleu R2, R4, 4 # Pula caso R4 > R2 (acabou de contar)
+addi R1, R1, R3, 0 # Soma R3 no resultado
+addi R4, R4, R0, 1 # Soma 1 no contador R4
+beq R0, R0, -3 # Loop para multiplicar
+
+beq R1, R1, 0 # Mostra o resultado

@@ -1,0 +1,26 @@
+addi R1, R0, R0, 0 # R1 = 0 Resultado
+addi R2, R0, R0, 0 # R2 = X
+addi R3, R0, R0, 0 # R3 = Y
+
+bles R0, R2, 5 # Pula caso R2 > 0
+
+addi R5, R0, R0, 1 # Seta flag que é negativo R5
+xori R2, R2, R0, -1 # Inverte os bits de R2
+addi R2, R2, R0, 1 # Soma para terminar de negativar
+beq R0, R0, 2 # Pula
+
+addi R5, R0, R0, -1 # Seta flag que é positivo R5
+
+bles R2, R4, 4 # Pula caso R4 > R2 (acabou de contar)
+addi R1, R1, R3, 0 # Soma R3 no resultado
+addi R4, R4, R0, 1 # Soma 1 no contador R4
+beq R0, R0, -3 # Loop para multiplicar
+
+bles R0, R5, 2 # Pula caso R5 > R0
+
+beq R0, R0, 3 # Mostra o resultado
+
+xori R1, R1, R0, -1 # Inverte os bits de R1
+addi R1, R1, R0, 1 # Soma para terminar de negativar
+
+beq R1, R1, 0 # Mostra o resultado
