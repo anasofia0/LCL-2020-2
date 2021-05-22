@@ -1,0 +1,6 @@
+subi R1,R0,R0,16 # R1=-16
+addi R2,R0,R0,16 # R2=16
+subi R2,R2,R0,1 # R2=R2-1 devido ao =
+addi R1,R1,R0,1 # R1=R1+1
+bles R1,R2,-1 # R1<=R2? Loop : Next
+beq R1,R1,0 # J Fim

@@ -1,0 +1,8 @@
+addi R1,R0,R0,1 # R1=1 primeiro ímpar
+addi R2,R0,R0,15 # R2=15 valor final
+addi R2,R2,R0,1 # R2=R2+1 (devido ao =)
+bleu R2,R1,4 # R2<=R1 ? Fim : Next
+addi R3,R3,R1,0 # R3=R3+R1 somatório
+addi R1,R1,R0,2 # R1=R1+2 próximo ímpar
+addi R1,R1,R0,2 # R1=R1+2 próximo ímpar
+beq R3,R3,0 # J Fim
